@@ -19,9 +19,8 @@ const tempoObjetivo3 = new Date("2024-05-10T00:00:00");
 const tempoObjetivo4 = new Date("2024-05-10T00:00:00");
 
 const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
-contadores[0].textContent = calculaTempo(tempos[0]);
 
-function calculaTempo(tempos [0]) {
+function calculaTempo(tempoObjetivo) {
     let tempoAtual = new Date();
     let tempoFinal = tempoObjetivo - tempoAtual;
     let segundos = Math.floor(tempoFinal / 1000);
@@ -36,4 +35,11 @@ function calculaTempo(tempos [0]) {
     return dias + "dias " + horas + "horas " + minutos + "minutos " + segundos + "segundos ";
 }
 
-contadores[0].textContent = tempoObjetivo1 - tempoAtual;
+function atualizaCronometro() {
+    document.getElementById("dias0").textContent = calculaTempo(tempos[0])[0];
+    document.getElementById("horas0").textContent = calculaTempo(tempos[0])[1];
+    document.getElementById("min0").textContent = calculaTempo(tempos[0])[2];
+    document.getElementById("seg0").textContent = calculaTempo(tempos[0])[3];
+    
+
+}
